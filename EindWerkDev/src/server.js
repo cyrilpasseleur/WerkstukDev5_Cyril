@@ -11,13 +11,18 @@ const client = new Client({
     port:'5432',
     database:'root'
 })
-// app.get("/Steps", (req,res)=>{
-//     res.send("Here all the steps");
-// })
+
+
+
 app.get("/steps", async (req, res) => {
     const rows = await readSteps();
     res.send(JSON.stringify(rows))
 })
+
+// app.post("/steps", async (req, res) => {
+//     const rows = await readSteps();
+//     res.send(JSON.stringify(rows))
+// })
 app.listen(8080, () => console.log("Web server is listening.. on port 8080"))
 
 client.connect()
