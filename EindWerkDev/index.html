@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stijl.css">
-    <script type="module" src="src/server.js"></script>
+    <script type="module" src="src2/front.js"></script>
     <title>Document</title>
 </head>
 <body>
     <form>
         <h1>Dag Kalender</h1>
-        <input type="number" placeholder="Stappen per dag"><br>
-        <input type="number" placeholder="Calorieen per dag"><br>
-        <input type="number" placeholder="Sporturen per dag"><br>
-        <button>Toevoegen</button>
+        <input id="stap" type="number" placeholder="Stappen per dag"><br>
+        <input id="cal" type="number" placeholder="Calorieen per dag"><br>
+        <input id="sportuur" type="number" placeholder="Sporturen per dag"><br>
+        <button id="voeg">Toevoegen</button>
     </form>
     <div id="agenda">
 
+    </div>
+    <div id="statistieken">
+        <h1>Jaar 2021</h1>
     </div>
 </body>
 </html>

@@ -9,43 +9,42 @@ router.use(function (req, res, next) {
 })
 
 router.get('/', function (req, res) {
-    db.select().from('sportagenda').then(function (data) {
+    db.select().from('statistieken').then(function (data) {
         res.send(data);
         
     });
 });
 
 router.post('/', function (req, res) {
-    db.insert(req.body).returning('*').into('sportagenda').then(function(data){
+    db.insert(req.body).returning('*').into('statistieken').then(function(data){
         res.send(data);
     })
 });
 
 router.patch('/:id', function (req,res){
-    db('sportagenda').where({id: req.params.id}).update(req.body).returning('*').then(function(data){
+    db('statistieken').where({id: req.params.id}).update(req.body).returning('*').then(function(data){
         res.send(data);
     });
 });
 
 router.put('/:id', function (req,res){
-    db('sportagenda').where({id: req.params.id}).update({
-        date: req.body.date || null,
-        stappen: req.body.stappen || null,
-        calorieen: req.body.calorieen || null,
-        sporturen: req.body.sporturen || null
+    db('statistieken').where({id: req.params.id}).update({
+        maandstappen: req.body.maandstappen || null,
+        maandcalorieen: req.body.maandcalorieen || null,
+        maandsporturen: req.body.maandsporturen || null
     }).returning('*').then(function(data){
         res.send(data);
     });
 })
 
 router.delete('/:id', function(req,res){
-    db('sportagenda').where({id: req.params.id}).del().then(function(){
+    db('statistieken').where({id: req.params.id}).del().then(function(){
         res.json({success: true});
     })
 })
 
 router.get('/:id', function(req,res){
-    db('sportagenda').where({id: req.params.id}).select().then(function(data){
+    db('statistieken').where({id: req.params.id}).select().then(function(data){
         res.send(data);
     })
 })
