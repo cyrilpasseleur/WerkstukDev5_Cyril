@@ -4,8 +4,30 @@ form input,form button{
 }
 form{
     margin: 50px 0;
+    width: 50%;
+    float: left;
 }
 body{
     width: 90%;
     margin: auto;
+}
+#agenda{
+    width: 50%;
+    float: right;
+    margin: 50px 0;
+    overflow: auto;
+    height: 300px;
+}
+#statistieken{
+    clear: both;
+}
+#statistieken h2{
+    display: inline-block;
+    margin: 100px 4%;
+    width: 25%;
+    text-align: center;
+}
+body > h1{
+    clear: both;
+    text-align: center;
 }
