@@ -13,4 +13,4 @@ app.use(bodyParser.urlencoded({
 
 app.use('/api',apiRoute);
 app.listen('3000');
-
+module.exports = app;

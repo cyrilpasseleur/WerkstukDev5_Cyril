@@ -11,12 +11,14 @@ router.use(function (req, res, next) {
 })
 
 router.get('/', function (req, res) {
+    res.status(200);
     db.select().from('sportagenda').then(function (data) {
         res.send(data);
     });
 });
 
 router.post('/', function (req, res) {
+    res.status(201);
     db.insert(req.body).returning('*').into('sportagenda').then(function(data){
         res.send(data);
     })
@@ -50,5 +52,4 @@ router.get('/:uuid_', function(req,res){
         res.send(data);
     })
 })
-
 module.exports = router;
