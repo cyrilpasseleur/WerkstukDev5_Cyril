@@ -23,6 +23,7 @@
 Activities: GET, POST, DELETE, PUT, PATCH., GET:uuid
 Category: GET, POST, DELETE, PUT, PATCH, GET:uuid
 
+- Easy testing using Postman
 
 # Tests 
 
