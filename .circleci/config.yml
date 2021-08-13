@@ -12,7 +12,7 @@ jobs:
   
     docker:
       - image: cimg/node:15.1
-    
+    working_directory: ~/EindWerkDev
     steps:
    
       - checkout
@@ -20,7 +20,7 @@ jobs:
       - node/install-packages
     
       - run:
-          working_directory: ~/EindWerkDev
+          
           name: Run tests
           command: npm test
 
