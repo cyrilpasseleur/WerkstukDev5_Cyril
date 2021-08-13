@@ -13,15 +13,15 @@ jobs:
     docker:
       - image: cimg/node:15.1
     
-    working_directory: ~/EindWerkDev/
     steps:
    
       - checkout
       
       - node/install-packages
     
-       - run: cd EindWerkDev && npm ci
-       - run: cd EindWerkDev && npm test
+      - run:
+          name: Run tests
+          command: npm test
 
 workflows:
   
