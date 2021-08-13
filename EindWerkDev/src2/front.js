@@ -1,10 +1,13 @@
 
+//FRONTEND JAVASCRITP (optioneel)
 var article = document.getElementById('agenda');
 //Get logs agenda
 getLogs();
 var maandstappen = 0;
 var maandcalorieen = 0;
 var maandsporturen = 0;
+
+//Ophalen logs
 function getLogs() {
     article.innerHTML = "";
     fetch('http://127.0.0.1:3000/api/sportagenda/')
@@ -52,7 +55,7 @@ button.addEventListener('click', function (e) {
     
 })
 
-
+//PatchLogs
 var statis = document.getElementById('statistieken');
 function  patchStatistieken(maandstappen,maandcalorieen,maandsporturen){
     fetch('http://127.0.0.1:3000/api/statistieken/884f04a2-e763-489a-8f15-63dde0bfe12e', {

@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
+//Server nodemon server.js
  //extended true zorgt ervoor dat je alles in object kan oproepen
 
 app.use('/api',apiRoute);

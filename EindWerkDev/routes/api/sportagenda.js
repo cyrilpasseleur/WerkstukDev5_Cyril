@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../database');
 
+//Cors policy error remover ;p
 router.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Headers', "origin, X-Requested-With,content-type,accept");
@@ -9,7 +10,8 @@ router.use(function (req, res, next) {
     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS,PATCH");
     next();
 })
-
+//TABLE 1
+//GET logs data from database
 router.get('/', function (req, res) {
     res.status(200);
     db.select().from('sportagenda').then(function (data) {
@@ -17,6 +19,7 @@ router.get('/', function (req, res) {
     });
 });
 
+//POST logs data to database
 router.post('/', function (req, res) {
     res.status(201);
     db.insert(req.body).returning('*').into('sportagenda').then(function(data){
@@ -24,12 +27,14 @@ router.post('/', function (req, res) {
     })
 });
 
+//PATCH logs data from database
 router.patch('/:uuid_', function (req,res){
     db('sportagenda').where({uuid_: req.params.uuid_}).update(req.body).returning('*').then(function(data){
         res.send(data);
     });
 });
 
+//PUT logs data from database
 router.put('/:uuid_', function (req,res){
     db('sportagenda').where({uuid_: req.params.uuid_}).update({
         date: req.body.date || null,
@@ -41,12 +46,14 @@ router.put('/:uuid_', function (req,res){
     });
 })
 
+//DELETE data from database
 router.delete('/:uuid_', function(req,res){
     db('sportagenda').where({uuid_: req.params.uuid_}).del().then(function(){
         res.json({success: true});
     })
 })
 
+//GET data according of uuid from database
 router.get('/:uuid_', function(req,res){
     db('sportagenda').where({uuid_: req.params.uuid_}).select().then(function(data){
         res.send(data);

@@ -1,3 +1,4 @@
+//Knex connection
 const knex = require('knex')({
     client: 'pg',
     connection:{
