@@ -21,7 +21,7 @@ jobs:
     
       - run:
           name: Run tests
-          command: npm test
+          command: cd EindWerkDev && npm test
 
 workflows:
   
