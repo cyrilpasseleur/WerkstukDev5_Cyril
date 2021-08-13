@@ -6,11 +6,16 @@
 2. Install Node using npm install
 3. Install docker and start docker-compose
 4. Create container and images using --> docker-compose up --build -d
-# or
+- or
 5. Create image in docker --> docker pull IMAGENAME:TAG
-
 6. Start server using --> nodemon server.js
 
+# Terminal Database setup
+1. Enter container root by using --> docker exec -it IMAGENAME psql -U root 
+2. From here you can 
+    - create database DATABASENAME
+    - create table TABLENAME(VALUES...)
+    - alter table TABLENAME drop/add..
 
 
 # Endpoints in this project
