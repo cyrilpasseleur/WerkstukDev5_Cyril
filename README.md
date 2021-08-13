@@ -17,7 +17,7 @@
     - create table TABLENAME(VALUES...)
     - alter table TABLENAME drop/add..
 
-
+Test
 # Endpoints in this project
 
 Activities: GET, POST, DELETE, PUT, PATCH., GET:uuid
