@@ -12,7 +12,7 @@ jobs:
   
     docker:
       - image: cimg/node:15.1
-     working_directory: ~/EindWerkDev
+    working_directory: ~/project/EindWerkDev
     steps:
    
       - checkout
