@@ -19,8 +19,9 @@ jobs:
       
       - node/install-packages
     
-      
-       - run: cd EindWerkDev && npm test
+      - run:
+          name: Run tests
+          command: cd EindWerkDev && npm test
 
 workflows:
   
